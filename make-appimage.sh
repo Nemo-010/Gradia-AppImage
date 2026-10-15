@@ -16,6 +16,7 @@ export GTK_DIR=gtk-4.0
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=be.alexandervanhee.gradia # Default to Wayland's wmclass. For X11, GTK_CLASS_FIX will force the wmclass to be the Wayland one.
 export GTK_CLASS_FIX=1
+export PATH_MAPPING='/usr/lib/gradia:${SHARUN_DIR}/lib/gradia'
 
 # Deploy dependencies
 quick-sharun /usr/bin/gradia \
