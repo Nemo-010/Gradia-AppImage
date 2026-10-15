@@ -21,6 +21,8 @@ quick-sharun /usr/bin/gradia \
              /usr/lib/libgirepository* \
              /usr/lib/gio/modules/libgiognutls.so* \
              /usr/lib/libsoup* \
+             /usr/bin/bash \
+             /usr/bin/curl \
              /usr/bin/sed \
              /usr/bin/tee \
              /usr/bin/date \

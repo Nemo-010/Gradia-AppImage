@@ -8,7 +8,9 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
 	appstream          \
+	bash               \
 	blueprint-compiler \
+	curl               \
 	dconf              \
 	gdk-pixbuf2        \
 	graphene           \
