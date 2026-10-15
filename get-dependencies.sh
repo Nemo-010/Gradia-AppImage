@@ -52,3 +52,17 @@ git clone https://github.com/AlexanderVanhee/Gradia ./Gradia && (
 	meson compile -C build
 	meson install -C build
 )
+
+# Ship a default OCR language and script detection in the lighter
+# tessdata_fast format so OCR works without downloading a model first
+# (the Arch package only ships osd and no language data)
+echo "Downloading tesseract script models..."
+echo "---------------------------------------------------------------"
+tessdata_dir=/usr/share/tessdata
+tessdata_source=https://github.com/tesseract-ocr/tessdata_fast/raw/main
+rm -f "$tessdata_dir"/*.traineddata
+for lang in eng osd; do
+	echo "Downloading $lang.traineddata"
+	curl -fL --retry 30 --retry-connrefused --retry-delay 1 \
+		"$tessdata_source/$lang.traineddata" -o "$tessdata_dir/$lang.traineddata"
+done
